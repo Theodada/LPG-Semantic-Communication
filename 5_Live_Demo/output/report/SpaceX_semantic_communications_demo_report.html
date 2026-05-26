@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SpaceX Semantic Communications Demo Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 34px; line-height: 1.52; color: #17202a; }
+h1, h2, h3 { color: #0b1f33; }
+.card { border: 1px solid #d5d8dc; border-radius: 14px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 5px rgba(0,0,0,0.06); }
+.kpi { display: inline-block; min-width: 210px; padding: 12px 14px; margin: 7px; border-radius: 12px; background: #f5f7fa; vertical-align: top; }
+.kpi strong { font-size: 1.35em; display: block; }
+img { max-width: 100%; border: 1px solid #eceff1; border-radius: 12px; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+th, td { border: 1px solid #d5d8dc; padding: 9px; text-align: left; }
+th { background: #f2f4f7; }
+code { background: #f2f4f7; padding: 2px 5px; border-radius: 5px; }
+.small { color: #566573; font-size: 0.94em; }
+</style>
+</head>
+<body>
+<h1>SpaceX Semantic Communications Demo Report</h1>
+<p class="small">Generated locally by <code>spacex_semantic_demo.py</code> on 2026-05-26 18:44:23.</p>
+
+<div class="card">
+<h2>What this live demo proves</h2>
+<p>This executable is a compact, deterministic proxy slice from a larger LPG semantic communication simulation programme. It is designed for a short engineering review where the reviewer can click one file, watch the calculations run, and immediately inspect plots, CSV data, and a report.</p>
+<p>The two chosen demonstrations are:</p>
+<ol>
+<li><strong>S3 Anchor Dynamics and Capacity Evolution</strong>: verifies that semantic capacity is not only a physical channel property. It changes with the shared context-action anchor Γ(t), and can recover after clarification.</li>
+<li><strong>S5 6G V2X Semantic Communication Under URLLC Constraints</strong>: verifies that action reliability can exceed symbol reliability when the receiver uses shared anchors to reconstruct intended action under low SNR.</li>
+</ol>
+<p class="small">This live demo is not a replacement for CARLA, SUMO, ns 3, Sionna, or transformer based end to end training. It is the executable engineering abstraction of the larger report.</p>
+</div>
+
+<div class="card">
+<h2>S3 Summary: Anchor Dynamics and Capacity Super Recovery</h2>
+<div class="kpi"><strong>1.638</strong>Anchor Recovery Coefficient, ARC</div>
+<div class="kpi"><strong>-0.0290</strong>Worst misalignment AER spike</div>
+<div class="kpi"><strong>0.0355</strong>Best clarification AER spike</div>
+<div class="kpi"><strong>3.100</strong>Post resolution peak Cs</div>
+<p><strong>Interpretation:</strong> ARC above 1.0 means the post clarification capacity envelope exceeds the earlier pre break envelope. This supports the project claim that a semantic receiver is not merely decoding symbols but adapting the shared interpretive anchor.</p>
+<img src="../plots/S3_anchor_dynamics_capacity.png" alt="S3 anchor dynamics and capacity plot">
+<img src="../plots/S3_AER_drift_velocity.png" alt="S3 AER and drift velocity plot">
+</div>
+
+<div class="card">
+<h2>S5 Summary: V2X URLLC Reliability at Lower SNR</h2>
+<div class="kpi"><strong>5.14 dB</strong>LPG CAR 0.95 threshold</div>
+<div class="kpi"><strong>13.76 dB</strong>Classical CAR 0.95 threshold</div>
+<div class="kpi"><strong>8.62 dB</strong>SNR saving at same action target</div>
+<div class="kpi"><strong>7.28x</strong>Lower required SNR or power proxy</div>
+<p><strong>Interpretation:</strong> CAR is the probability that the receiving agent executes the correct intended action. In autonomous coordination, this is more operationally meaningful than symbol error alone. The LPG curve reaches the safety target earlier because anchor enriched reconstruction supplies context that the physical channel does not carry by itself.</p>
+<table>
+<tr><th>System</th><th>CAR = 0.95 threshold</th><th>Meaning of result</th></tr>
+<tr><td>Classical 5G NR proxy</td><td>13.76 dB</td><td>Symbol fidelity dominated baseline</td></tr>
+<tr><td>DL SemCom proxy</td><td>10.79 dB</td><td>Task feature compression baseline</td></tr>
+<tr><td>LPG semantic proxy</td><td>5.14 dB</td><td>Anchor enriched action reconstruction</td></tr>
+</table>
+<img src="../plots/S5_CAR_vs_SNR_thresholds.png" alt="S5 CAR versus SNR thresholds">
+<img src="../plots/S5_TUP_vs_SNR.png" alt="S5 TUP versus SNR">
+</div>
+
+<div class="card">
+<h2>How to explain this in the interview</h2>
+<p><strong>Thirty second version:</strong> This demo shows that my work treats communication as preservation and reconstruction of meaning, not merely symbol delivery. S3 demonstrates adaptive recovery of semantic capacity when a shared anchor is repaired. S5 demonstrates that an autonomous system can reach the correct action at lower SNR because the receiver uses a shared semantic anchor to reconstruct intent.</p>
+<p><strong>Engineering caveat:</strong> The curves here are proxy models. The value of the demo is that the metrics, assumptions, equations, and generated files are explicit and reproducible. A production validation would plug the same metrics into a full CARLA, SUMO, ns 3, Sionna and transformer stack.</p>
+</div>
+
+<div class="card">
+<h2>Generated files</h2>
+<ul>
+<li><code>data/S3_anchor_dynamics_live_demo.csv</code></li>
+<li><code>data/S5_v2x_urllc_live_demo.csv</code></li>
+<li><code>plots/S3_anchor_dynamics_capacity.png</code></li>
+<li><code>plots/S3_AER_drift_velocity.png</code></li>
+<li><code>plots/S5_CAR_vs_SNR_thresholds.png</code></li>
+<li><code>plots/S5_TUP_vs_SNR.png</code></li>
+</ul>
+</div>
+</body>
+</html>
