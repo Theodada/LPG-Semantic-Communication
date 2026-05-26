@@ -8,8 +8,25 @@
 **Status:** PhD research — internal validation complete real-data validation in progress
 
 ---
+## Quick Start — Run the Live Demo
 
-## What This Is
+**Install dependencies (one time only):**
+```bash
+pip install numpy matplotlib
+```
+
+**Run both simulations in one command:**
+```bash
+python 5_Live_Demo/spacex_semantic_demo.py
+```
+
+**What you will see:**
+- Brief report about S3 and S5 in the terminal. 
+1. S3 Anchor Dynamics and Capacity Evolution
+2. S5 6G V2X Semantic Communication Under URLLC Constraints
+along with the live-generated graphs.
+
+## What LPG Semantic Communication Framework Is
 A rigorous mathematical framework — Logarithmic Probability 
 Geometry (LPG) — that formally extends Shannon's 1948 
 information theory across the boundary he deliberately left 
@@ -68,7 +85,12 @@ Publication target: IEEE Transactions on Communications
 
 ---
 
+## Repository
+
+https://github.com/Theodada/LPG-Semantic-Communication
+
 ## Contact
 
 Dada Theophilus Olusegun  
+Landmark University, Nigeria — Dept. of Electrical & Electronics Engineering 
 theodada@gmail.com, dada.theophilus@lmu.edu.ng
